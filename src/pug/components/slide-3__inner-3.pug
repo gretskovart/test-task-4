@@ -1,0 +1,65 @@
+mixin elem-img(index, position, num, title)
+  .grid__item(class=`slide__3--3__item-${index}`)
+    figure.grid__item__figure(class=`grid__item__figure--${position}`)
+      figcaption(class=`grid__item__figcaption--${position}`)
+        span.grid__item__num= num
+        h4.fourth-title.grid__item__title(class=`grid__item__title--${position}-${num}`)= title
+      span.grid__item__img-wrapper
+        img(src="./images/slide-3__icons.png", alt=`${title}`, class=`grid__item__img grid__item__img--${index}`)
+    case index
+      when '11'
+        span.grid__item__title-small(class=`grid__item__title-small--${index}`) &#8595; амилин
+        include arrows/arrows--4-2
+      when '9'
+        include arrows/arrows--2-5
+
+mixin elem-no-img(index, position, num)
+  .grid__item(class=`slide__3--3__item-${index}`)
+    figure.grid__item__figure(class=`grid__item__figure--${position}`)
+      figcaption(class=`grid__item__figcaption--${position}`)
+        span.grid__item__num= num
+        h4.fourth-title.grid__item__title(class=`grid__item__title--${position}`) &beta;-клетки
+      span.grid__item__img-wrapper.grid__item__symbol &beta;
+    include arrows/arrows--1-3
+
+mixin elem-text-2
+  span.grid__item__num 2
+  h4.fourth-title.grid__item__title.grid__item__title--from-top-right &#8595; инкретинового эффекта
+  include arrows/arrows--3-3
+
+mixin elem-text-3
+  span.grid__item__num 3
+  h4.fourth-title.grid__item__title.grid__item__title--from-top-left Дефект &#945;-клеток
+  span.grid__item__title-small.grid__item__title-small--14 &#8593; глюкагон
+  include arrows/arrows--3-4
+
+mixin elem-text-no-num
+  h4.fourth-title.grid__item__title.grid__item__title--no-num Гипергликемия
+  include arrows/arrows--4-3
+
+mixin elem-block
+  .grid__item__block
+    span.grid__item__title-small.grid__item__title-small--12 Инсулинорезистентность
+
+.slide__3__inner.slide__3--3
+  h3.third-title.slide__3__title Звенья патогенеза СД2
+  .slide__3__grid.slide__3--3__grid.grid
+    +elem-no-img('3', 'from-top', '1')
+    +elem-img('6', 'from-left', '8', 'Микрофлора кишечника')
+    +elem-img('9', 'from-right', '7', 'Головной мозг')
+    +elem-img('11', 'from-left', '9', 'Нарушение иммунной регуляции/воспаление')
+    .grid__item.slide__3--3__item-12
+      +elem-block
+    .grid__item.slide__3--3__item-13
+      +elem-text-2
+    .grid__item.slide__3--3__item-14
+      +elem-text-3
+    +elem-img('15', 'from-right', '6', 'Печень')
+    +elem-img('16', 'from-left', '10', 'Желудок')
+    .grid__item.slide__3--3__item-18
+      +elem-text-no-num
+    +elem-img('20', 'from-right', '5', 'Мышцы')
+    +elem-img('23', 'center', '11', 'Почки')
+    +elem-img('25', 'from-right', '4', 'Жировые клетки')
+    
+    

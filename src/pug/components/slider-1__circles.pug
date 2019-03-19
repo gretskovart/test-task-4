@@ -1,0 +1,15 @@
+mixin mark(text, style, size)
+  mixin circle
+    .circles__item
+  .slider-1__mark-group.mark-group(class=`mark-group--${style}`)
+    span.mark-group__text(class=`mark-group__text--${style}`)= text
+    .mark-group__circles.circles(class = `circles--${size} mark-group__circles--${style}`)
+      +circle
+      +circle
+      +circle
+      +circle
+
++mark('Цель по HbA1c', 'horizontal', 'large')
++mark('Гипогликемия', 'vertical', 'medium')
++mark('Осложнения СД', 'vertical', 'small')
++mark('СС риски', 'vertical', 'small')

@@ -1,0 +1,38 @@
+- var i = 1;
+mixin arrows(direction, length)
+  .arrows__item(class=`arrows__item--direction-${direction} arrows__item--length-${length} arrows__block--1__num-${i++}`)
+
+mixin rectangle
+  .grid__item__rectangle.grid__item__rectangle--3-1 Гипергликемия
+  +arrows('270', '59')
+  +arrows('90', '59')
+
+mixin elem-img(index, position, num, title, arrow)
+  .grid__item(class=`slide__3--1__item-${index}`)
+    figure.grid__item__figure(class=`grid__item__figure--${position} grid__item__figure--${position}--3-1`)
+      figcaption(class=`grid__item__figcaption--${position} grid__item__figcaption--${position}--3-1 grid__item__figcaption--${position}--3-1--${index}`)
+        span.grid__item__num= num
+        h4.fourth-title.grid__item__title(class=`grid__item__title--${position}-${num}--3-1`)= title
+      span.grid__item__img-wrapper(class=`grid__item__img-wrapper--${position} grid__item__img-wrapper--${index}`)
+        img(src="./images/slide-3__icons.png", alt=`${title}`, class=`grid__item__img grid__item__img--${index}`)
+
+mixin elem-no-img(index, position, num, arrow)
+  .grid__item(class=`slide__3--1__item-${index}`)
+    figure.grid__item__figure(class=`grid__item__figure--${position}`)
+      figcaption(class=`grid__item__figcaption--${position} grid__item__figcaption--${position}--3-1`)
+        span.grid__item__num= num
+        h4.fourth-title.grid__item__title(class=`grid__item__title--${position}--3-1`) &beta;-клетки
+      span.grid__item__img-wrapper.grid__item__symbol.grid__item__symbol--3-1 &beta;
+    +arrows('230', '198')
+    +arrows('180', '59')
+    +arrows('130', '198')
+
+.slide__3__inner.slide__3--1
+  h3.third-title.slide__3__title Звенья патогенеза СД2
+  .slide__3__grid.slide__3--1__grid.grid
+    +elem-no-img('2', 'from-top', '1')
+    +elem-img('20', 'from-bottom', '2', 'Мышцы')
+    .grid__item.slide__3--1__item-3
+      +rectangle
+    +elem-img('15', 'from-bottom', '3', 'Печень')
+    

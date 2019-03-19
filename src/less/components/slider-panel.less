@@ -1,0 +1,44 @@
+.slider-panel{
+  position: absolute;
+  bottom: 63px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 635px;
+  &__filter{
+    position: relative;
+  }
+  &__line{
+    position: absolute;
+    top: 0;
+    background: rgba(209,234,255,.3);
+    height: 12px;
+    width: 100%;
+    &--fill{
+      background: rgba(209,234,255,1);
+    }
+  }
+  &__years{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 40px;
+  }
+  &__text{
+    font-family: 'Gotham Pro Regular';
+    font-size: 20px;
+    color: #fff;
+  }
+  &__btn{
+    background: transparent, url(./../images/slider__btn.png) no-repeat;
+    border: none;
+    outline: none;
+    width: 44px;
+    height: 56px;
+    position: absolute;
+    top: -21px;
+    right: -11px;
+  }
+}

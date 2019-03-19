@@ -1,0 +1,58 @@
+.mark-group{
+  display: flex;
+  position: absolute;
+  &--vertical{
+    flex-direction: column;
+  }
+  &--horizontal{
+    vertical-align: middle;
+    line-height: 50px;
+  }
+  &__text{
+    font-family: 'Lato Regular';
+    color: #0d319c;
+    font-size: 19px;
+    letter-spacing: .9px;
+    position: relative;
+    &--horizontal{
+      order: 2;
+      margin-left: 9px;
+    }
+  }
+  &__circles{
+    &--horizontal{
+      order: 1;
+    }
+    &--vertical{
+      align-self: center;
+    }
+  }
+  &:nth-of-type(1){
+    top: 262px;
+    left: 562px;
+  }
+  &:nth-of-type(2){
+    top: 405px;
+    left: 222px;
+    & .mark-group__text{
+      left: 1px;
+      bottom: 8px;
+    }
+  }
+  &:nth-of-type(3){
+    left: 409px;
+    top: 516px;
+    & .mark-group__text{
+      left: -40px;
+      bottom: 8px;
+    }
+  }
+  &:nth-of-type(4){
+    right: 148px;
+    top: 495px;
+    & .mark-group__text{
+      left: 4px;
+      bottom: 8px;
+    }
+  }
+}

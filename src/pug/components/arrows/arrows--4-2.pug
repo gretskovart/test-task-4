@@ -1,0 +1,6 @@
+- var i = 1;
+mixin arrows(direction, length)
+  .arrows__item(class=`arrows__item--direction-${direction} arrows__item--length-${length} arrows__block--4-2__num-${i++}`)
+
+.arrows.arrows__block--4-2
+  +arrows('180', '16')

@@ -1,0 +1,32 @@
+.slide-down{
+  display: block;
+  background: url(./../images/bottom-light.png) no-repeat 50% 100%;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  height: 69px;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Gotham Pro Regular';
+  font-size: 15px;
+  text-align: center;
+  left: 13px;
+  &::before{
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: -6px;
+    top: 16px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(135deg);
+  }
+  &--hide{
+    visibility: hidden;
+  }
+}

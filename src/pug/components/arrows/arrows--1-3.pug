@@ -1,0 +1,20 @@
+- var i = 1;
+mixin arrows(quantity, direction, length)
+  case quantity
+    when 'double'
+      .arrows__group-item(class=`arrows__block--1-3__num-${i++} arrows__item--direction-${direction}`)
+        .arrows__item(class=`arrows__item--length-${length} arrows__item__quantity-${quantity}`)
+        .arrows__item(class=`arrows__item--length-${length} arrows__item__quantity-${quantity} arrows__item--second arrows__item--second__${i}`)
+    default
+      .arrows__item(class=`arrows__item--direction-${direction} arrows__item--length-${length} arrows__block--1-3__num-${i++}`)
+
+.arrows.arrows__block--1-3
+  +arrows('double', '262', '105')
+  +arrows('double', '239', '146')
+  +arrows('', '232', '225')
+  +arrows('', '180', '63')
+  +arrows('', '180', '208')
+  +arrows('', '180', '63')
+  +arrows('double', '121', '146')
+  +arrows('double', '98', '105')
+

@@ -1,0 +1,43 @@
+mixin rectangle
+  .grid__item__rectangle.grid__item__rectangle--3-2 Гипергликемия
+
+mixin elem-img(index, position, num, title, arrow)
+  .grid__item(class=`slide__3--2__item-${index}`)
+    figure.grid__item__figure(class=`grid__item__figure--${position} grid__item__figure--${position}--3-2`)
+      figcaption(class=`grid__item__figcaption--${position} grid__item__figcaption--${position}--3-2 grid__item__figcaption--${position}--3-2--${index}`)
+        span.grid__item__num= num
+        h4.fourth-title.grid__item__title(class=`grid__item__title--${position}-${num}--3-2`)= title
+      span.grid__item__img-wrapper
+        img(src="./images/slide-3__icons.png", alt=`${title}`, class=`grid__item__img grid__item__img--${index}`)
+    .arrows__item(class=`arrows__item--direction-${arrow} arrows__item--length-25 arrows__block--2__num-${index}`)
+
+mixin elem-no-img(index, position, num, arrow)
+  .grid__item(class=`slide__3--2__item-${index}`)
+    figure.grid__item__figure(class=`grid__item__figure--${position}`)
+      figcaption(class=`grid__item__figcaption--${position} grid__item__figcaption--${position}--3-2`)
+        span.grid__item__num= num
+        h4.fourth-title.grid__item__title(class=`grid__item__title--${position}--3-2`) &beta;-клетки
+      span.grid__item__img-wrapper.grid__item__symbol.grid__item__symbol--3-2 &beta;
+    .arrows__item(class=`arrows__item--direction-${arrow} arrows__item--length-25 arrows__block--2__num-${index}`)
+
+mixin elem-circle-num(index, position, num, title, arrow)
+  .grid__item(class=`slide__3--2__item-${index}`)
+    figure.grid__item__figure(class=`grid__item__figure--${position}`)
+      figcaption(class=`grid__item__figcaption--${position} grid__item__figcaption--${position}--3-2 grid__item__figcaption--${position}--3-2--${index}`)
+        h4.fourth-title.grid__item__title(class=`grid__item__title--${position}`)= title
+      span.grid__item__img-wrapper.grid__item__num(class=`grid__item__num--circle-${position}`)= num
+    .arrows__item(class=`arrows__item--direction-${arrow} arrows__item--length-25 arrows__block--2__num-${index}`)
+
+.slide__3__inner.slide__3--2
+  h3.third-title.slide__3__title Смертельный октет
+  .slide__3__grid.slide__3--2__grid.grid
+    +elem-circle-num('1', 'from-left', '2', 'Инкретиновый эффект', '180')
+    +elem-no-img('2', 'from-top', '1', '180')
+    +elem-circle-num('3', 'from-right', '3', 'Дефект α-клеток', '180')
+    +elem-img('23', 'from-left', '8', 'Почки', '90')
+    .grid__item.slide__3--2__item-5
+      +rectangle
+    +elem-img('25', 'from-right', '4', 'Жировые клетки', '270')
+    +elem-img('9', 'from-bottom', '7', 'Головной мозг', '0')
+    +elem-img('15', 'from-bottom', '6', 'Печень', '0')
+    +elem-img('20', 'from-bottom', '5', 'Мышцы', '0')
